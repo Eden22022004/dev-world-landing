@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, HTMLMotionProps } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
@@ -10,14 +10,13 @@ import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 export default function Page() {
   return (
     <motion.div
-      {...({} as HTMLMotionProps<'div'>)}
+      as="div" // Важливо для TypeScript
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       className="scroll-smooth"
     >
       <Hero />
-
       <Projects />
 
       <section id="about" className="max-w-6xl mx-auto px-6 py-32 md:py-40">
@@ -82,7 +81,6 @@ export default function Page() {
       </section>
 
       <Contact />
-
       <Footer />
     </motion.div>
   )
