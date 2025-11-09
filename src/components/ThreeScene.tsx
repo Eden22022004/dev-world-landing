@@ -16,6 +16,7 @@ function FloatingBoxes() {
   })
 
   return (
+    // <-- використовуємо "group" від @react-three/fiber без додаткових типів
     <group ref={groupRef}>
       <mesh position={[1.2, 0.3, -1.2]}>
         <boxGeometry args={[0.9, 0.9, 0.9]} />
@@ -38,7 +39,7 @@ export default function ThreeScene() {
         <Stars radius={100} depth={50} count={3000} factor={4} fade />
         <FloatingBoxes />
       </Suspense>
-      <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} />
+      <OrbitControls enableZoom={false} enablePan={false} enableRotate />
     </Canvas>
   )
 }
