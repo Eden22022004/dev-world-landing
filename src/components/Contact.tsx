@@ -7,7 +7,7 @@ export default function Contact() {
     const [msg, setMsg] = useState('')
     const [sent, setSent] = useState(false)
 
-    async function onSubmit(e: React.FormEvent) {
+    async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         const text = encodeURIComponent(`Привіт, я з лендингу. Мене звати ${name}. ${msg}`)
         window.open(`https://t.me/development_of_site?text=${text}`, '_blank')
@@ -21,6 +21,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 className="text-4xl md:text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-400"
+                viewport={{ once: true }}
             >
                 Зв'язок
             </motion.h2>
@@ -31,6 +32,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="mt-10 grid gap-6 bg-white/5 p-10 rounded-3xl shadow-2xl backdrop-blur-xl border border-white/20"
+                viewport={{ once: true }}
             >
                 <input
                     required
@@ -48,6 +50,7 @@ export default function Contact() {
                 ></textarea>
 
                 <motion.button
+                    type="submit"
                     whileHover={{ scale: 1.06, boxShadow: '0 8px 25px rgba(255, 105, 180, 0.4)' }}
                     whileTap={{ scale: 0.95 }}
                     className="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-white font-semibold shadow-lg transition-all"
