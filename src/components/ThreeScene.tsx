@@ -16,7 +16,7 @@ function FloatingBoxes() {
   })
 
   return (
-    // <-- використовуємо "group" від @react-three/fiber без додаткових типів
+    // @ts-ignore
     <group ref={groupRef}>
       <mesh position={[1.2, 0.3, -1.2]}>
         <boxGeometry args={[0.9, 0.9, 0.9]} />
