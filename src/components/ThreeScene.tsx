@@ -1,7 +1,3 @@
-/// <reference types="@react-three/fiber" />
-
-'use client'
-
 import { Suspense, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
@@ -18,7 +14,7 @@ function FloatingBoxes() {
   })
 
   return (
-    <group ref={groupRef}>
+    <primitive object={groupRef.current}>
       <mesh position={[1.2, 0.3, -1.2]}>
         <boxGeometry args={[0.9, 0.9, 0.9]} />
         <meshStandardMaterial color="#7C3AED" metalness={0.6} roughness={0.1} />
@@ -28,7 +24,7 @@ function FloatingBoxes() {
         <sphereGeometry args={[0.6, 32, 32]} />
         <meshStandardMaterial color="#06B6D4" metalness={0.2} roughness={0.3} />
       </mesh>
-    </group>
+    </primitive>
   )
 }
 
