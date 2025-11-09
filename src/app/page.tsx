@@ -7,8 +7,10 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 
-// 🩹 Виправлення проблеми типів для Vercel (Next 14 + Framer Motion 11)
+// 🩹 Обхід проблеми з типами Motion
 const MotionDiv: any = motion.div
+const MotionH2: any = motion.h2
+const MotionP: any = motion.p
 
 export default function Page() {
     return (
@@ -22,16 +24,16 @@ export default function Page() {
             <Projects />
 
             <section id="about" className="max-w-6xl mx-auto px-6 py-32 md:py-40">
-                <motion.h2
+                <MotionH2
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6 }}
                     className="text-3xl md:text-4xl font-bold text-center mb-6"
                 >
                     Про мене
-                </motion.h2>
+                </MotionH2>
 
-                <motion.p
+                <MotionP
                     initial={{ y: 10, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -40,9 +42,9 @@ export default function Page() {
                     Я створюю сучасні веб-продукти, лендінги та SPA високого рівня. Використовую Next.js, React,
                     Nest.js, Tailwind CSS і інтеграції з OpenAI. Мій підхід — швидкість, прозорість та wow-ефект для
                     користувачів.
-                </motion.p>
+                </MotionP>
 
-                <motion.div
+                <MotionDiv
                     className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -68,9 +70,9 @@ export default function Page() {
                             Приділяю увагу деталям, анімаціям та інтерактивності, щоб продукт залишався в пам’яті користувача.
                         </p>
                     </div>
-                </motion.div>
+                </MotionDiv>
 
-                <motion.div
+                <MotionDiv
                     className="mt-16 flex justify-center gap-8 text-4xl text-primary"
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -79,7 +81,7 @@ export default function Page() {
                     <FaReact title="React" />
                     <FaNodeJs title="Node.js" />
                     <FaPalette title="Tailwind / Design" />
-                </motion.div>
+                </MotionDiv>
             </section>
 
             <Contact />
