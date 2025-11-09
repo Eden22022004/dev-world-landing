@@ -14,6 +14,6 @@
     "jsx": "preserve",          // <- важливо
     "types": ["node", "three", "@react-three/fiber"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/types/**/*.d.ts"],
   "exclude": ["node_modules"]
 }
