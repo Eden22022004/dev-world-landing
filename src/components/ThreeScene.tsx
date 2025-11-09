@@ -21,7 +21,6 @@ function FloatingBoxes() {
         <boxGeometry args={[0.9, 0.9, 0.9]} />
         <meshStandardMaterial color="#7C3AED" metalness={0.6} roughness={0.1} />
       </mesh>
-
       <mesh position={[-1.2, -0.4, -0.6]}>
         <sphereGeometry args={[0.6, 32, 32]} />
         <meshStandardMaterial color="#06B6D4" metalness={0.2} roughness={0.3} />
