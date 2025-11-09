@@ -1,7 +1,12 @@
 'use client'
+
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+
+// 🩹 Обхід проблеми з типами Motion
+const MotionHeader: any = motion.header
+const MotionA: any = motion.a
 
 export default function Nav() {
     const [active, setActive] = useState('#projects')
@@ -13,7 +18,7 @@ export default function Nav() {
     ]
 
     return (
-        <motion.header
+        <MotionHeader
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, type: 'spring', stiffness: 90 }}
@@ -26,7 +31,7 @@ export default function Nav() {
 
                 <nav className="flex space-x-6">
                     {links.map((link) => (
-                        <motion.a
+                        <MotionA
                             key={link.href}
                             href={link.href}
                             onClick={() => setActive(link.href)}
@@ -44,10 +49,10 @@ export default function Nav() {
                                     active === link.href ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
                                 }`}
                             />
-                        </motion.a>
+                        </MotionA>
                     ))}
                 </nav>
             </div>
-        </motion.header>
+        </MotionHeader>
     )
 }
