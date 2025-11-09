@@ -1,9 +1,9 @@
-import '@react-three/fiber'
+import * as THREE from 'three'
+import type { ReactThreeFiber } from '@react-three/fiber'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      // Тепер JSX знає про три-вимірні елементи
       group: ReactThreeFiber.Object3DNode<THREE.Group, typeof THREE.Group>
       mesh: ReactThreeFiber.Object3DNode<THREE.Mesh, typeof THREE.Mesh>
       boxGeometry: ReactThreeFiber.Object3DNode<THREE.BoxGeometry, typeof THREE.BoxGeometry>
