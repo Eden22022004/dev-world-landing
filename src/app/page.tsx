@@ -9,7 +9,7 @@ import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 
 export default function Page() {
   return (
-    <motion.div
+    <motion.div<HTMLDivElement>
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
