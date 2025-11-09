@@ -1,6 +1,13 @@
 'use client'
+
 import { motion } from 'framer-motion'
 import ThreeScene from './ThreeScene'
+
+// 🩹 Обхід проблеми з типами Motion
+const MotionH1: any = motion.h1
+const MotionP: any = motion.p
+const MotionDiv: any = motion.div
+const MotionA: any = motion.a
 
 export default function Hero() {
     return (
@@ -11,45 +18,45 @@ export default function Hero() {
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
                 <div className="w-full md:w-1/2">
-                    <motion.h1
+                    <MotionH1
                         initial={{ x: -50, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.2, type: 'spring', stiffness: 90 }}
                         className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 bg-clip-text text-transparent leading-tight"
                     >
                         Привіт, я Назар — створюю веб-продукти
-                    </motion.h1>
+                    </MotionH1>
 
-                    <motion.p
+                    <MotionP
                         initial={{ x: -30, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.35 }}
                         className="mt-6 text-lg opacity-80"
                     >
                         Я роблю швидкі, красиві та ефективні сайти: від лендінгів до повноцінних web-продуктів. Поринь у мій віртуальний світ — побачиш приклади моєї роботи й зможеш зв'язатись одразу.
-                    </motion.p>
+                    </MotionP>
 
                     <div className="mt-8 flex gap-4 flex-wrap">
-                        <motion.a
+                        <MotionA
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="#contact"
                             className="px-6 py-3 rounded-2xl glass shadow-lg"
                         >
                             Написати мені
-                        </motion.a>
-                        <motion.a
+                        </MotionA>
+                        <MotionA
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="#projects"
                             className="px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-400 text-white shadow-lg"
                         >
                             Переглянути проєкти
-                        </motion.a>
+                        </MotionA>
                     </div>
                 </div>
 
-                <motion.div
+                <MotionDiv
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ delay: 0.5 }}
@@ -77,7 +84,7 @@ export default function Hero() {
                             <div className="text-xs opacity-70">підтримка</div>
                         </div>
                     </div>
-                </motion.div>
+                </MotionDiv>
             </div>
         </section>
     )
