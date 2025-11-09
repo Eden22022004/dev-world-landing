@@ -7,12 +7,13 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 
-export default function Page() {
-  // Типізуємо motion.div як div
-  const MotionDiv = motion.div as unknown as (props: HTMLMotionProps<'div'>) => JSX.Element
+// Типізуємо motion.div як звичайний div
+type MotionDivProps = HTMLMotionProps<'div'>
 
+export default function Page() {
   return (
-    <MotionDiv
+    <motion.div
+      {...({} as MotionDivProps)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -84,6 +85,6 @@ export default function Page() {
 
       <Contact />
       <Footer />
-    </MotionDiv>
+    </motion.div>
   )
 }
