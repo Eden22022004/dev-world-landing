@@ -1,19 +1,15 @@
 'use client'
 
-import { motion, HTMLMotionProps } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 
-// Типізуємо motion.div як звичайний div
-type MotionDivProps = HTMLMotionProps<'div'>
-
 export default function Page() {
   return (
     <motion.div
-      {...({} as MotionDivProps)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
