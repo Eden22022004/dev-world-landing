@@ -7,11 +7,9 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 
-const MotionDiv = motion.div as React.FC<React.HTMLAttributes<HTMLDivElement> & { children?: React.ReactNode }>
-
 export default function Page() {
     return (
-        <MotionDiv
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -83,6 +81,6 @@ export default function Page() {
 
             <Contact />
             <Footer />
-        </MotionDiv>
+        </motion.div>
     )
 }
