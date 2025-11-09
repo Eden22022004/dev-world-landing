@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, HTMLMotionProps } from 'framer-motion'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
@@ -8,9 +8,11 @@ import Footer from '../components/Footer'
 import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 
 export default function Page() {
+  // Типізуємо motion.div як div
+  const MotionDiv = motion.div as unknown as (props: HTMLMotionProps<'div'>) => JSX.Element
+
   return (
-    <motion.div
-      as="div" // Важливо для TypeScript
+    <MotionDiv
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -82,6 +84,6 @@ export default function Page() {
 
       <Contact />
       <Footer />
-    </motion.div>
+    </MotionDiv>
   )
 }
