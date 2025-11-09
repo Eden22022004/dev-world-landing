@@ -10,14 +10,13 @@ import { FaReact, FaNodeJs, FaPalette } from 'react-icons/fa'
 
 export default function Page() {
     return (
-        <motion.div<HTMLDivElement>
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             className="scroll-smooth"
         >
             <Hero />
-
             <Projects />
 
             <section id="about" className="max-w-6xl mx-auto px-6 py-32 md:py-40">
@@ -70,7 +69,6 @@ export default function Page() {
                     </div>
                 </motion.div>
 
-                {/* Tech icons */}
                 <motion.div
                     className="mt-16 flex justify-center gap-8 text-4xl text-primary"
                     initial={{ y: 20, opacity: 0 }}
@@ -84,7 +82,6 @@ export default function Page() {
             </section>
 
             <Contact />
-
             <Footer />
         </motion.div>
     )
