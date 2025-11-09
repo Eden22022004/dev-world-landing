@@ -1,4 +1,5 @@
 'use client'
+
 import { motion } from 'framer-motion'
 
 const mock = [
@@ -28,6 +29,11 @@ const mock = [
     },
 ]
 
+// 🩹 Обхід проблеми з типами Motion
+const MotionA: any = motion.a
+const MotionDiv: any = motion.div
+const MotionH3: any = motion.h3
+
 export default function Projects() {
     return (
         <section id="projects" className="max-w-6xl mx-auto px-6 py-32 md:py-40">
@@ -36,7 +42,7 @@ export default function Projects() {
             </h2>
             <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {mock.map((p, i) => (
-                    <motion.a
+                    <MotionA
                         key={p.title}
                         href={p.link}
                         target="_blank"
@@ -54,29 +60,28 @@ export default function Projects() {
                                 alt={p.title}
                                 className="w-full h-44 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                             />
-                            {/* Overlay */}
-                            <motion.div
+                            <MotionDiv
                                 className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center md:rounded-2xl"
                                 whileHover={{ scale: 1.02 }}
                             >
-                                <motion.span
+                                <MotionDiv
                                     className="text-white text-sm bg-white/10 backdrop-blur-md px-5 py-2 rounded-xl border border-white/20"
                                     whileHover={{ scale: 1.1 }}
                                 >
                                     Відкрити проєкт
-                                </motion.span>
-                            </motion.div>
+                                </MotionDiv>
+                            </MotionDiv>
                         </div>
 
-                        <motion.h3
+                        <MotionH3
                             className="mt-4 font-semibold text-lg"
                             whileHover={{ color: '#38bdf8' }}
                             transition={{ duration: 0.3 }}
                         >
                             {p.title}
-                        </motion.h3>
+                        </MotionH3>
                         <p className="text-sm opacity-70 mt-1">{p.desc}</p>
-                    </motion.a>
+                    </MotionA>
                 ))}
             </div>
         </section>
