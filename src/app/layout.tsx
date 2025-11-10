@@ -3,7 +3,12 @@ import Nav from '../components/Nav'
 
 export const metadata = {
     title: 'Dev World — Назар (Frontend / Fullstack)',
-    description: 'Мій віртуальний світ як розробника — лендінг, портфоліо, контакти.'
+    description: 'Мій віртуальний світ як розробника — лендінг, портфоліо, контакти.',
+    icons: {
+        icon: '/favicon.ico', // favicon для браузера
+        shortcut: '/favicon.ico', // маленький значок для вкладок
+        apple: '/favicon.ico' // для iOS
+    }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
