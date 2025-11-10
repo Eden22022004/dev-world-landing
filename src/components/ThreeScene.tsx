@@ -11,6 +11,10 @@ const Mesh: any = 'mesh'
 const BoxGeometry: any = 'boxGeometry'
 const SphereGeometry: any = 'sphereGeometry'
 const MeshStandardMaterial: any = 'meshStandardMaterial'
+const CanvasAny: any = Canvas
+const AmbientLight: any = 'ambientLight'
+const DirectionalLight: any = 'directionalLight'
+
 
 function FloatingBoxes() {
     const groupRef = useRef<THREE.Group>(null!)
@@ -37,14 +41,14 @@ function FloatingBoxes() {
 
 export default function ThreeScene() {
     return (
-        <Canvas camera={{ position: [0, 0, 4], fov: 50 }} style={{ height: '100%' }}>
-            <ambientLight intensity={0.6} />
-            <directionalLight position={[5, 5, 5]} intensity={0.6} />
+        <CanvasAny camera={{ position: [0, 0, 4], fov: 50 }} style={{ height: '100%' }}>
+            <AmbientLight intensity={0.6} />
+            <DirectionalLight position={[5, 5, 5]} intensity={0.6} />
             <Suspense fallback={null}>
                 <Stars radius={100} depth={50} count={3000} factor={4} fade />
                 <FloatingBoxes />
             </Suspense>
             <OrbitControls enableZoom={false} enablePan={false} enableRotate />
-        </Canvas>
+        </CanvasAny>
     )
 }
