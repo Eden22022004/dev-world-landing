@@ -2,7 +2,7 @@ import './globals.css'
 import Nav from '../components/Nav'
 
 export const metadata = {
-    title: 'Dev World — Георгій (Frontend / Fullstack)',
+    title: 'Dev World — Назар (Frontend / Fullstack)',
     description: 'Мій віртуальний світ як розробника — лендінг, портфоліо, контакти.'
 }
 
