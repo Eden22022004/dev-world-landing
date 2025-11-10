@@ -5,27 +5,33 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
 import * as THREE from 'three'
 
+// 🩹 Обхід типів JSX елементів Three.js
+const Group: any = 'group'
+const Mesh: any = 'mesh'
+const BoxGeometry: any = 'boxGeometry'
+const SphereGeometry: any = 'sphereGeometry'
+const MeshStandardMaterial: any = 'meshStandardMaterial'
+
 function FloatingBoxes() {
-    const groupRef = useRef<THREE.Group>(new THREE.Group())
+    const groupRef = useRef<THREE.Group>(null!)
 
     useFrame((state) => {
-        const group = groupRef.current
-        group.rotation.y += 0.002
-        group.rotation.x = Math.sin(state.clock.elapsedTime / 6) * 0.1
+        groupRef.current.rotation.y += 0.002
+        groupRef.current.rotation.x = Math.sin(state.clock.elapsedTime / 6) * 0.1
     })
 
     return (
-        <primitive object={groupRef.current}>
-            <mesh position={[1.2, 0.3, -1.2]}>
-                <boxGeometry args={[0.9, 0.9, 0.9]} />
-                <meshStandardMaterial color="#7C3AED" metalness={0.6} roughness={0.1} />
-            </mesh>
+        <Group ref={groupRef}>
+            <Mesh position={[1.2, 0.3, -1.2]}>
+                <BoxGeometry args={[0.9, 0.9, 0.9]} />
+                <MeshStandardMaterial color="#7C3AED" metalness={0.6} roughness={0.1} />
+            </Mesh>
 
-            <mesh position={[-1.2, -0.4, -0.6]}>
-                <sphereGeometry args={[0.6, 32, 32]} />
-                <meshStandardMaterial color="#06B6D4" metalness={0.2} roughness={0.3} />
-            </mesh>
-        </primitive>
+            <Mesh position={[-1.2, -0.4, -0.6]}>
+                <SphereGeometry args={[0.6, 32, 32]} />
+                <MeshStandardMaterial color="#06B6D4" metalness={0.2} roughness={0.3} />
+            </Mesh>
+        </Group>
     )
 }
 
