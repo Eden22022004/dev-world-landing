@@ -11,9 +11,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",          // <- важливо
+    "jsx": "preserve",
     "types": ["node", "three"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/types/**/*.d.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/types/global.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
